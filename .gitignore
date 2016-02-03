@@ -4,3 +4,8 @@ bower_components/
 
 build/
 dist/
+
+.tmp/
+
+.DS_Store
+Thumbs.db
