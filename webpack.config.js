@@ -1,17 +1,18 @@
-var webpack = require('webpack');
+const webpack = require(`webpack`);
 
 module.exports = {
   watch: true,
   context: process.cwd(),
   entry: [
-    'babel-polyfill',
-    './js/script.js'
+    `babel-polyfill`,
+    `react-tap-event-plugin`,
+    `./src/app.jsx`
   ],
 
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       mangle: {
-        except: ['$super', '$', 'exports', 'require']
+        except: [`$super`, `$`, `exports`, `require`]
       },
       compress: {
         warnings: false
@@ -19,33 +20,37 @@ module.exports = {
     })
   ],
 
+  resolve: {
+    extensions: [``, `.js`, `.jsx`]
+  },
+
   module: {
     loaders: [
       {
-        test: /\.js?$/,
+        test: /(\.js|\.jsx)?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
+        loader: `babel`,
         query: {
-          plugins: ['transform-runtime'],
-          presets: ['es2015'],
+          plugins: [`transform-runtime`],
+          presets: [`es2015`, `stage-3`, `react`],
           cacheDirectory: true
         }
       },
       {
         test: /\.css$/,
-        loader: 'style!css'
+        loader: `style!css`
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass'
+        loader: `style!css!sass`
       }
     ]
   },
 
-  devtool: 'eval-source-map',
+  devtool: `eval-source-map`,
   output: {
-    path: process.cwd()+'/',
-    filename: 'build/script.js',
-    sourceMapFilename: 'build/script.js.map'
+    path: process.cwd()+`/`,
+    filename: `build/app.js`,
+    sourceMapFilename: `build/app.js.map`
   }
 };
