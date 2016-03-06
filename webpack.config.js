@@ -10,6 +10,8 @@ module.exports = {
   ],
 
   plugins: [
+    new webpack.optimize.DedupePlugin(),
+
     new webpack.optimize.UglifyJsPlugin({
       mangle: {
         except: [`$super`, `$`, `exports`, `require`]
@@ -47,7 +49,7 @@ module.exports = {
     ]
   },
 
-  devtool: `eval-source-map`,
+  devtool: `cheap-module-eval-source-map`,
   output: {
     path: process.cwd()+`/`,
     filename: `build/app.js`,
