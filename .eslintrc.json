@@ -57,7 +57,7 @@
     "sourceType": "module",
     "impliedStrict": true,
     "ecmaFeatures": {
-      jsx: true
+      "jsx": true
     }
   }
 }
