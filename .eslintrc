@@ -26,6 +26,9 @@
   "parserOptions": {
     "ecmaVersion": 7,
     "sourceType": "module",
-    "impliedStrict": true
+    "impliedStrict": true,
+    "ecmaFeatures": {
+      jsx: true
+    }
   }
 }
