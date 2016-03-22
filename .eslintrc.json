@@ -10,6 +10,30 @@
     "semi": ["error", "always", {
       "omitLastInOneLineBlock": true
     }],
+    "keyword-spacing": ["error", {
+      "before": true,
+      "after": false,
+      "overrides": {
+        "else": {
+          "after": true
+        },
+        "import": {
+          "after": true
+        },
+        "export": {
+          "after": true
+        },
+        "from": {
+          "after": true
+        },
+        "try": {
+          "after": true
+        },
+        "return": {
+          "after": true
+        }
+      }
+    }],
     "no-unused-vars": "off",
     "quotes": ["error", "backtick"],
     "no-console": ["warn", {
