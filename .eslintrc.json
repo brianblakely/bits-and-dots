@@ -26,7 +26,16 @@
         "from": {
           "after": true
         },
+        "of": {
+          "after": true
+        },
         "try": {
+          "after": true
+        },
+        "const": {
+          "after": true
+        },
+        "case": {
           "after": true
         },
         "return": {
@@ -37,7 +46,7 @@
     "no-unused-vars": "off",
     "quotes": ["error", "backtick"],
     "no-console": ["warn", {
-      "allow": ["warn", "error"]
+      "allow": ["warn", "error", "info"]
     }],
     "no-var": "error",
     "object-shorthand": "error",
@@ -48,15 +57,14 @@
   },
   "env": {
     "browser": true,
-    "es6": true,
     "commonjs": true,
     "node": true
   },
   "parserOptions": {
-    "ecmaVersion": 7,
+    "ecmaVersion": 2017,
     "sourceType": "module",
-    "impliedStrict": true,
     "ecmaFeatures": {
+      "impliedStrict": true,
       "jsx": true
     }
   }
