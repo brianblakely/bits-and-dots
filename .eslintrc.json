@@ -1,5 +1,16 @@
 {
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "impliedStrict": true
+    }
+  },
 
   "rules": {
     "strict": ["off", "global"],
@@ -43,29 +54,23 @@
         }
       }
     }],
-    "no-unused-vars": "off",
     "quotes": ["error", "backtick"],
     "no-console": ["warn", {
       "allow": ["warn", "error", "info"]
     }],
     "no-var": "error",
+    "no-invalid-this": "error",
     "object-shorthand": "error",
     "prefer-const": "error",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error"
   },
+
   "env": {
     "browser": true,
     "commonjs": true,
-    "node": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 2017,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "impliedStrict": true,
-      "jsx": true
-    }
+    "node": true,
+    "es6": true
   }
 }
